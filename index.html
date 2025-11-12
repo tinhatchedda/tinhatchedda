@@ -1,131 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TIN HAT CHEDDA™ — Where Conspiracy Meets Currency</title>
-  <link rel="preload" href="assets/video/vol1-trailer.mp4" as="video" type="video/mp4">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- ===================== HERO ===================== -->
-  <header class="hero">
-    <div class="hero-media">
-      <video
-        id="heroVideo"
-        class="hero-video"
-        src="assets/video/vol1-trailer.mp4"
-        playsinline
-        muted
-        loop
-        autoplay
-      ></video>
-      <div class="hero-grain"></div>
-      <div class="hero-vignette"></div>
+  <section class="hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="assets/video/vol1-trailer.mp4" type="video/mp4">
+    </video>
+    <div class="hero-inner">
+      <h1>TIN HAT CHEDDA™</h1>
+      <p class="tagline">Where Conspiracy Meets Currency</p>
+      <a href="#files" class="button">Enter the Incident</a>
+    </div>
+  </section>
+
+  <!-- ===================== FILE 01 ===================== -->
+  <section id="files" class="block file-card">
+    <h3 class="file-title"><span>File 01: The Chedda Incident</span></h3>
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/file01.mp4" type="video/mp4">
+    </video>
+    <p class="file-desc">
+      Greg and Bigfoot accidentally heat up a government-labeled block of “Project MF Chedda.”  
+      The cheese hums, the air bends, and a vortex tears open their living room reality.
+    </p>
+  </section>
+
+  <!-- ===================== FILE 02 ===================== -->
+  <section class="block file-card">
+    <h3 class="file-title"><span>File 02: The Pull</span></h3>
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/file02.mp4" type="video/mp4">
+    </video>
+    <p class="file-desc">
+      The room liquefies into neon gravity. Greg panics; Bigfoot laughs.  
+      The portal’s hungry — and paranoia smells delicious.
+    </p>
+  </section>
+
+  <!-- ===================== FILE 03 ===================== -->
+  <section class="block file-card">
+    <h3 class="file-title"><span>File 03: Clockland Arrival</span></h3>
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/file03.mp4" type="video/mp4">
+    </video>
+    <p class="file-desc">
+      They land in a melted dimension where time is a fungus and clocks grow from the soil.  
+      “Bro,” says Bigfoot, “time’s edible here.” Greg takes notes.
+    </p>
+  </section>
+
+  <!-- ===================== FILE 04 ===================== -->
+  <section class="block file-card">
+    <h3 class="file-title"><span>File 04: Prophecy of the Shroom</span></h3>
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/file04.mp4" type="video/mp4">
+    </video>
+    <p class="file-desc">
+      A sentient mushroom whispers: “Clockwise to forget... counterclockwise to feed the portal.”  
+      Greg tries both. The portal hungers.
+    </p>
+  </section>
+
+  <!-- ===================== FILE 05 ===================== -->
+  <section class="block file-card">
+    <h3 class="file-title"><span>File 05: The Glitch Return</span></h3>
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/file05.mp4" type="video/mp4">
+    </video>
+    <p class="file-desc">
+      Static bleeds into color. Greg and Bigfoot glitch through channels of old timelines —  
+      returning home, but not the same home they left.
+    </p>
+  </section>
+
+  <!-- ===================== CLASSIFIED DOSSIER ===================== -->
+  <section id="dossier" class="block dossier">
+    <header class="dossier-head">
+      <h3 class="glitch" data-text="CLASSIFIED DOSSIER">CLASSIFIED DOSSIER</h3>
+      <p class="dossier-sub">SUBJECTS 001–002 · ACCESS LEVEL: ORB • VERIFIED ANOMALY</p>
+    </header>
+
+    <div class="bio-grid">
+      <!-- Greg -->
+      <article class="holo-card tilt">
+        <div class="holo-glow"></div>
+        <div class="holo-noise"></div>
+        <div class="holo-frame">
+          <div class="tag">001 // GREG</div>
+          <h4 class="bio-name gradient">The Paranoid Visionary</h4>
+          <p class="bio-text">
+            Crypto-stoner philosopher with a backpack full of expired energy drinks.  
+            Convinced the government, lizard people, and his Wi-Fi router are in a group chat.  
+            Spent years chasing Bigfoot for proof — forgot to hit record.  
+            Now streams conspiracy theories about AI, simulation glitches, and interdimensional pizza.  
+            He’s not wrong… just early.
+          </p>
+          <ul class="bio-bullets">
+            <li>Signature: <span class="mono">tin-foil cap + joint</span></li>
+            <li>Weakness: <span class="mono">notifications &amp; nachos</span></li>
+            <li>Alignment: <span class="mono">Chaotic Curious</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Bigfoot -->
+      <article class="holo-card tilt">
+        <div class="holo-glow"></div>
+        <div class="holo-noise"></div>
+        <div class="holo-frame">
+          <div class="tag">002 // BIGFOOT</div>
+          <h4 class="bio-name gradient">The Forest OG</h4>
+          <p class="bio-text">
+            Eight feet of chill and folklore. Off-grid since dial-up, trades mushrooms for wisdom.  
+            Believes money and fame are illusions — snacks are eternal.  
+            Rolls smooth, speaks rarely, sees through nonsense instantly.  
+            Greg brings the panic; Bigfoot brings the balance.  
+            Together: cosmic dumb luck wrapped in secondhand smoke.
+          </p>
+          <ul class="bio-bullets">
+            <li>Signature: <span class="mono">ancient herb + infinite appetite</span></li>
+            <li>Weakness: <span class="mono">limited seating</span></li>
+            <li>Alignment: <span class="mono">Lawful Vibes</span></li>
+          </ul>
+        </div>
+      </article>
     </div>
 
-    <div class="hero-content container">
-      <h1 class="brand-title">
-        <span class="brand-gradient">TIN HAT CHEDDA</span><sup class="tm">™</sup>
-      </h1>
-      <p class="brand-sub">Where Conspiracy Meets Currency</p>
-
-      <div class="hero-actions">
-        <a href="#files" class="btn btn-primary">Enter the Files</a>
-        <button id="audioToggle" class="btn btn-hollow" aria-pressed="true">Unmute Audio</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ===================== PROLOGUE ===================== -->
-  <main class="container">
-    <section class="block">
-      <h2 class="block-title"><span>The Chedda Files – Vol. 1: The Incident Logs</span></h2>
-      <p class="lede">
-        These recordings were never supposed to exist. The government labeled the event
-        <strong>“Project MF Chedda”</strong> and buried the footage under six layers of clearance and one very
-        confused intern. But the signal leaks—through static, through memes, through the kind of Wi-Fi that smells
-        like burnt popcorn and paranoia.
-      </p>
-      <p class="lede">What you’re about to see are the recovered fragments: five visual glitches left behind when Greg and Bigfoot cracked open a portal with a joint, a microwave, and the world’s most dangerous cheese.</p>
-      <p class="lede"><em>Welcome to Tin Hat Chedda.</em> Reality melts at <strong>420 °F</strong>.</p>
-    </section>
-
-    <!-- ===================== FILE 01 ===================== -->
-    <section class="file block" id="files">
-      <h3 class="file-title"><span>File 01 — The Chedda Incident</span></h3>
-      <div class="card">
-        <video class="card-video" src="assets/video/file01.mp4" playsinline muted loop autoplay></video>
-      </div>
-      <div class="copy">
-        <p>Somewhere between midnight hunger and poor judgment, Greg finds a foil pouch stamped in red: <strong>PROJECT MF CHEDDA — DO NOT CONSUME</strong>. Bigfoot tells him to chill. Greg lights a joint instead. The microwave hums like it’s remembering the future. The air thickens. The cheese glows.</p>
-      </div>
-    </section>
-
-    <!-- ===================== FILE 02 ===================== -->
-    <section class="file block">
-      <h3 class="file-title"><span>File 02 — The Pull</span></h3>
-      <div class="card">
-        <video class="card-video" src="assets/video/file02.mp4" playsinline muted loop autoplay></video>
-      </div>
-      <div class="copy">
-        <p>The cheese doesn’t melt—it detonates softly, like a star folding in on itself. The cabin forgets how to be solid. Greg and Bigfoot are lifted, laughing, screaming, praying—it’s all the same sound now. Somewhere in the echo, reality asks: <em>“You sure you’re ready for this?”</em></p>
-      </div>
-    </section>
-
-    <!-- ===================== FILE 03 ===================== -->
-    <section class="file block">
-      <h3 class="file-title"><span>File 03 — Clockland Arrival</span></h3>
-      <div class="card">
-        <video class="card-video" src="assets/video/file03.mp4" playsinline muted loop autoplay></video>
-      </div>
-      <div class="copy">
-        <p>They land in a meadow of broken timepieces and sentient mushrooms. The sky blinks. Pyramids breathe. A TV floats by and changes the channel to their faces. Greg laughs. Bigfoot keeps eating.</p>
-      </div>
-    </section>
-
-    <!-- ===================== FILE 04 ===================== -->
-    <section class="file block">
-      <h3 class="file-title"><span>File 04 — Prophecy of the Shroom</span></h3>
-      <div class="card">
-        <video class="card-video" src="assets/video/file04.mp4" playsinline muted loop autoplay></video>
-      </div>
-      <div class="copy">
-        <p>A sagely mushroom awakens and speaks in clocks: <strong>“Clockwise to forget… counterclockwise to feed the portal.”</strong> The text spirals out of its grin. Greg nods like he understands. He does not.</p>
-      </div>
-    </section>
-
-    <!-- ===================== FILE 05 ===================== -->
-    <section class="file block">
-      <h3 class="file-title"><span>File 05 — The Glitch Return</span></h3>
-      <div class="card">
-        <video class="card-video" src="assets/video/file05.mp4" playsinline muted loop autoplay></video>
-      </div>
-      <div class="copy">
-        <p>Greg’s reflection blinks first. Bigfoot is buffering. Reality stutters and saves as <em>‘Untitled Final 2.’</em> The TV coughs, the portal purrs, the cheese smiles. They are back. Or they never left.</p>
-      </div>
-    </section>
-
-    <!-- ===================== END TRANSMISSION ===================== -->
-    <section class="block outro">
-      <h3 class="file-title"><span>End Transmission — Vol. 1 Complete</span></h3>
-      <p class="lede">If you can read this, you’re part of the experiment now. Keep your joint lit and your compass counterclockwise.</p>
-    </section>
-
-    <!-- ===================== CREATOR NOTE ===================== -->
-    <section class="block note">
-      <h3 class="file-title"><span>Creator’s Note</span></h3>
-      <p class="lede">Built for the Web3 art heads, the trippy stoners, and the “I have sources” crowd. This is the pilot drop. More fragments, clues, and strains incoming.</p>
-    </section>
-  </main>
+    <footer class="dossier-foot">
+      <div class="stamp">TIN HAT CHEDDA — WHERE CONSPIRACY MEETS CURRENCY</div>
+    </footer>
+  </section>
 
   <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <p class="footer-badge"><span id="rotator">Powered by Paranoia // Decoding Reality Since 2025</span></p>
+  <footer class="block" style="text-align:center;">
+    <p id="footer-rotator">Powered by Paranoia.</p>
   </footer>
 
-  <audio id="bedHum" src="assets/audio/hum.mp3" loop></audio>
   <script src="script.js"></script>
 </body>
 </html>
