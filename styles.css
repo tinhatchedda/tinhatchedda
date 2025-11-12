@@ -1,197 +1,123 @@
-/* TIN HAT CHEDDA — Neon Aura Theme */
-/* Works with your current index.html (hero + files + footer rotator) */
+/* Import type */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
 
 :root{
-  --bg:#080b10;
-  --panel:#0f141c;
-  --ink:#e9f2ff;
-  --muted:#9fb0c4;
-
-  --chedda:#ffd36a;     /* cheddar gold */
-  --chedda2:#ff9f3f;    /* warm orange */
-  --cyan:#39ffe6;       /* portal cyan */
-  --mag:#ff3acf;        /* degen magenta */
-
-  --ring:#ffffff22;
-  --glow:#ffd36a55;
-  --shadow:0 24px 60px -22px #000000cc, inset 0 1px 0 #ffffff0f;
+  --bg:#0d0f14;
+  --panel:#121622;
+  --ink:#d8e2ff;
+  --muted:#9aa5c4;
+  --gold:#ffcc6f;
+  --chedda:#ffb24d;
+  --aqua:#3ff4fb;
+  --magenta:#ff3acf;
+  --glow:0 0 24px rgba(63,244,251,.25), 0 0 48px rgba(255,58,207,.15);
+  --radius:16px;
+  --shadow:0 8px 40px rgba(0,0,0,.45);
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;height:100%}
-img,video{display:block;max-width:100%}
-
+html,body{height:100%}
 body{
-  background:
-    radial-gradient(1200px 700px at 50% -100px,#172030 0%,#0b1017 55%,#080b10 100%);
+  margin:0;
+  background: radial-gradient(1200px 800px at 50% -10%, #141a27 0%, #0c0f15 55%, #090c10 100%);
   color:var(--ink);
-  -webkit-font-smoothing:antialiased;
-  font-family: system-ui, -apple-system, "Inter", "SF Pro Text", Arial, sans-serif;
-  font-size: clamp(16px,1.9vw,18px);
-  line-height: 1.6;
-  overflow-x:hidden;
+  font-family:Space Grotesk, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height:1.6;
 }
 
-/* Subtle film grain */
-body::before{
-  content:"";
-  position:fixed; inset:0; pointer-events:none; z-index:1;
-  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.035"/></svg>');
-  mix-blend-mode:screen;
-  animation:grainShift 6s linear infinite;
+.container{width:clamp(320px, 92vw, 1100px); margin-inline:auto; padding:28px 0}
+
+/* ============== HERO ============== */
+.hero{position:relative; overflow:hidden}
+.hero-media{position:relative; height:86vh; min-height:560px}
+.hero-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; filter:contrast(1.06) saturate(1.06) brightness(.92);
 }
-@keyframes grainShift{0%{transform:translate(0,0)}50%{transform:translate(-1%,1%)}100%{transform:translate(0,0)}}
-
-/* ---------- HERO ---------- */
-#hero{
-  position:relative; min-height: 92svh; overflow:hidden;
-  display:grid; place-items:center;
+.hero-grain, .hero-vignette{position:absolute; inset:0; pointer-events:none}
+.hero-grain{
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>');
+  mix-blend-mode:overlay;
 }
-#hero-video{
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit: cover; object-position:center 55%;
-  filter: saturate(1.08) contrast(1.06) brightness(.96);
+.hero-vignette{
+  background: radial-gradient(65% 65% at 50% 40%, transparent 60%, rgba(0,0,0,.55) 100%);
 }
-.hero-overlay{
-  position:absolute; inset:0; pointer-events:none;
-  background:
-    radial-gradient(1100px 500px at 50% 8%, #000000aa 0%, transparent 42%),
-    linear-gradient(to bottom, #000000bb 0%, #00000033 30%, #000000cc 100%);
-  animation: vignettePulse 6s ease-in-out infinite;
+.hero-content{
+  position:absolute; inset:0; display:grid; place-content:center; text-align:center;
+  padding-inline:20px;
 }
-@keyframes vignettePulse{
-  0%,100%{opacity:.9}
-  50%{opacity:.75}
-}
-
-/* Centered hero text */
-#hero .hero-overlay + h1,
-#hero .hero-overlay + h1 + p,
-#hero .hero-overlay + h1 + p + .buttons{
-  /* (not used — overlay sits behind .hero-overlay sibling) */
-}
-
-#hero .hero-overlay ~ .hero-overlay{} /* guard */
-
-/* We’ll style the overlay content block via .hero-overlay’s sibling container */
-#hero .hero-overlay + div,
-#hero .hero-overlay + .hero-overlay + div { /* keep it robust */
-  position:relative; z-index:2;
-}
-
-/* Our actual content container is the .hero-overlay’s next sibling: */
-#hero .hero-overlay + div,
-.hero-overlay ~ .hero-overlay{}
-
-/* But your index uses <div class="hero-overlay"> then <div class="hero-overlay">? No — it uses one overlay and .hero-overlay sibling .hero-overlay? To be safe, style the block below: */
-#hero .hero-overlay + .hero-overlay-content{}
-
-#hero .hero-overlay ~ .hero-overlay-content{}
-
-/* Simpler: style the .hero-overlay’s next sibling via the known classes in your HTML */
-#hero .hero-overlay + h1{} /* no-op */
-
-/* Use the container you already have: */
-#hero .hero-overlay + h1{} /* ignore */
-
-/* Style the floating content block */
-#hero .hero-overlay + div.hero-overlay{}
-
-/* Fallback: style the overlayed content by hooking into the existing structure */
-#hero .hero-overlay ~ .hero-overlay{}
-
-/* OK, simpler: target the block by IDs/classes present in your HTML */
-#hero .hero-overlay + .hero-overlay{}
-
-/* Actual visible overlayed content */
-#hero .hero-overlay + .hero-overlay{}
-
-/* Since the above can be confusing, directly style the elements you have: */
-#hero h1{
-  position:relative; z-index:2; margin:0 16px 8px;
-  font-weight:900; letter-spacing:.08em; text-transform:uppercase;
-  font-size: clamp(34px, 8.6vw, 92px);
-  color:#fff;
-  background: linear-gradient(90deg, var(--chedda) 0%, #ffe08a 35%, var(--cyan) 70%, var(--mag) 100%);
+.brand-title{margin:0 0 8px 0; font-size:clamp(34px, 6.2vw, 72px); letter-spacing:.02em; text-transform:uppercase}
+.brand-gradient{
+  background:linear-gradient(90deg, var(--gold) 0%, var(--aqua) 40%, var(--magenta) 85%);
   -webkit-background-clip:text; background-clip:text; color:transparent;
-  text-shadow: 0 0 22px #000, 0 0 60px #000;
-  animation: titleGlow 5.5s ease-in-out infinite;
+  text-shadow:0 0 20px rgba(255,255,255,.08);
+  animation:shine 5.5s linear infinite;
 }
-@keyframes titleGlow{
-  0%,100%{filter: drop-shadow(0 0 12px #000) drop-shadow(0 0 20px #ffd36a44)}
-  50%{filter: drop-shadow(0 0 18px #000) drop-shadow(0 0 38px #39ffe644)}
-}
+.tm{font-size:.4em; color:#eadbff; text-shadow:0 0 8px rgba(255,255,255,.35)}
+@keyframes shine{0%{filter:hue-rotate(0)}100%{filter:hue-rotate(360deg)}}
+.brand-sub{margin:0 0 22px 0; color:var(--muted); font-size:clamp(15px,2.8vw,20px)}
 
-.subtitle{
-  position:relative; z-index:2; margin:0 16px 18px;
-  color:#d8e7ff; font-weight:600;
-  font-size: clamp(15px, 3.4vw, 20px);
-  text-shadow: 0 2px 18px #000;
-  animation: flicker 7.5s ease-in-out infinite;
+.hero-actions{display:flex; gap:14px; justify-content:center}
+.btn{
+  font:600 16px/1 Space Grotesk, sans-serif; padding:15px 22px; border-radius:999px; border:1px solid rgba(255,255,255,.14);
+  color:var(--ink); background:rgba(0,0,0,.35); backdrop-filter: blur(6px);
+  box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
 }
-@keyframes flicker{
-  0%,97%,100%{opacity:1}
-  98%{opacity:.55}
-  99%{opacity:1}
-}
-
-.buttons{
-  position:relative; z-index:2;
-  display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
-  margin: 8px 16px 12px;
-}
-
-.btn-primary, .btn-secondary{
-  border-radius: 14px; padding: .9rem 1.2rem; font-weight:800;
-  border:1px solid #ffffff3a; text-decoration:none; cursor:pointer;
-  box-shadow: 0 16px 36px -18px #000000aa, inset 0 0 0 1px #ffffff55;
-}
+.btn:hover{transform:translateY(-1.5px); box-shadow:0 10px 34px rgba(0,0,0,.55)}
 .btn-primary{
-  background: linear-gradient(180deg, var(--chedda) 0%, var(--chedda2) 100%);
-  color:#1a1300;
+  border:none; color:#111;
+  background:linear-gradient(180deg, #ffd68b 0%, var(--chedda) 100%); box-shadow:0 6px 28px rgba(255,178,77,.25);
 }
-.btn-secondary{
-  background:#0f1620; color:#e6f0ff;
+.btn-hollow{color:var(--ink); background:transparent}
+.btn:active{transform:translateY(0)}
+
+/* ============== SECTIONS ============== */
+.block{margin:44px 0}
+.block-title{
+  font-size:clamp(22px, 3.8vw, 28px);
+  text-transform:uppercase; letter-spacing:.04em; margin:0 0 20px; text-align:left;
+}
+.block-title span{
+  display:inline-block; padding:.35rem .75rem; border-radius:10px;
+  background:linear-gradient(90deg, rgba(63,244,251,.14), rgba(255,58,207,.12));
+  box-shadow:var(--glow);
 }
 
-/* ---------- CONTENT / FILES ---------- */
-.content{max-width:1080px; margin: 40px auto; padding: 0 16px}
-.file{
-  background: linear-gradient(180deg, #0e141c, #0b1118);
-  border:1px solid var(--ring); border-radius: 18px;
-  padding: 14px; box-shadow: var(--shadow);
-  margin: 0 auto 28px; max-width: 900px;
-}
-.file video{
-  width:100%; height:auto; object-fit: contain; background:#070a0f;
-  border-radius: 12px; border: 1px solid var(--ring);
-  box-shadow: 0 10px 40px -20px #000;
-}
-.file h2, .file h3{
-  margin:12px 4px 6px;
-  font-weight:800; letter-spacing:.02em;
-  font-size: clamp(18px,3.6vw,26px);
-  color:#fff;
-  text-shadow: 0 0 18px #000;
-}
-.file p{color:#d6e6ff; margin:6px 4px}
+.lede{color:var(--muted); font-size:clamp(16px, 2.9vw, 18px); margin:.6rem 0}
 
-/* ---------- END / FOOTER ---------- */
-#footer{
-  text-align:center; padding: 46px 16px 60px;
-  color:#cfe1ff;
+/* ============== CARDS / FILES ============== */
+.card{
+  position:relative; overflow:hidden; border-radius:var(--radius);
+  background:linear-gradient(180deg, #0f1320, #0b0f18);
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow: var(--shadow);
+  margin:14px 0 14px; isolation:isolate;
 }
-#rotating-text{
-  display:inline-block;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "DM Mono", monospace;
-  font-size: clamp(14px,2.2vw,16px);
-  padding:10px 14px; border-radius:12px;
-  background: linear-gradient(90deg, #0e1520, #0e1420cc);
-  border:1px solid var(--ring);
-  box-shadow: inset 0 0 0 1px #ffffff12, 0 10px 28px -18px #000;
-  animation: hueRoll 16s linear infinite;
+.card::before{
+  content:""; position:absolute; inset:-40%; filter:blur(40px);
+  background: radial-gradient(800px 300px at 20% 10%, rgba(63,244,251,.08), transparent 60%),
+              radial-gradient(600px 240px at 85% 90%, rgba(255,58,207,.08), transparent 60%);
+  z-index:0;
 }
-@keyframes hueRoll{
-  0%{filter:hue-rotate(0deg)}
-  100%{filter:hue-rotate(360deg)}
+.card-video{position:relative; z-index:1; width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover}
+
+.copy{padding:8px 4px}
+
+/* ============== OUTRO / FOOTER ============== */
+.outro .file-title span, .note .file-title span{background:linear-gradient(90deg, rgba(255,204,111,.18), rgba(63,244,251,.12))}
+.footer{
+  padding:54px 16px 80px; text-align:center; color:var(--muted); font-family:"IBM Plex Mono", ui-monospace, monospace;
+}
+.footer-badge{
+  display:inline-block; padding:14px 18px; border-radius:12px; background:rgba(255, 178, 77, .08);
+  border:1px solid rgba(255,255,255,.08); box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+#rotator{display:inline-block; transition:opacity .22s ease}
+#rotator.fade-out{opacity:.18}
+
+/* ============== MEDIA ============== */
+@media (min-width:900px){
+  .container{padding:44px 0}
+  .copy{padding:2px 6px}
 }
