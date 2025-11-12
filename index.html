@@ -2,129 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>TIN HAT CHEDDA™ — Where Conspiracy Meets Currency</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tin Hat Chedda™ — Where Conspiracy Meets Currency</title>
+  <link rel="preload" as="video" href="assets/video/vol1-trailer.mp4" type="video/mp4">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <!-- HERO -->
   <header class="hero">
-    <video class="hero-video" autoplay muted playsinline loop poster="assets/img/poster-vol1.jpg">
-      <source src="assets/video/vol1-trailer.mp4" type="video/mp4" />
-    </video>
-
-    <div class="hero-overlay"></div>
+    <div class="hero-media">
+      <video
+        id="heroVideo"
+        class="hero-video"
+        playsinline
+        muted
+        loop
+        autoplay
+        preload="auto"
+        src="assets/video/vol1-trailer.mp4"
+      ></video>
+      <div class="hero-gradient"></div>
+    </div>
 
     <div class="hero-inner">
-      <h1 class="brand">TIN HAT <span>CHEDDA</span><sup>™</sup></h1>
-      <p class="tagline">Where <span>Conspiracy</span> Meets <span>Currency</span></p>
+      <h1 class="brand">TIN HAT CHEDDA <span class="tm">™</span></h1>
+      <p class="tagline">Where Conspiracy Meets Currency</p>
 
-      <div class="hero-actions">
-        <a class="btn" href="#files">Enter the Files</a>
-        <button class="btn secondary" id="muteBtn" aria-pressed="true">Unmute Audio</button>
+      <div class="hero-ctas">
+        <a class="btn primary" href="#files">Enter the Files</a>
+        <button id="audioBtn" class="btn ghost" type="button">Unmute Audio</button>
       </div>
+
+      <p id="rotator" class="rotator">
+        Powered by paranoia.
+      </p>
     </div>
   </header>
 
-  <main id="files" class="wrapper">
-
-    <!-- Intro -->
-    <section class="section">
-      <h2 class="section-title">THE CHEDDA FILES — VOL. 1: <em>The Incident Logs</em></h2>
-      <p class="lede">
-        These recordings were never supposed to exist. The signal leaks — through static, through memes,
-        through Wi-Fi that smells like burnt popcorn and paranoia. What follows are five recovered fragments.
-      </p>
-    </section>
-
-    <!-- FILE 01 -->
-    <section class="section file">
-      <div class="media">
-        <video autoplay muted playsinline loop>
-          <source src="assets/video/file01.mp4" type="video/mp4" />
-        </video>
+  <!-- FILES -->
+  <main id="files" class="files">
+    <section class="file">
+      <div class="file-media">
+        <video class="file-video" playsinline muted loop autoplay preload="metadata" src="assets/video/file01.mp4"></video>
       </div>
-      <div class="prose">
-        <h3>FILE 01 — The Chedda Incident</h3>
-        <p><strong>Greg</strong> finds a foil pouch stamped in red: <span class="mono">PROJECT MF CHEDDA — DO NOT CONSUME</span>. Bigfoot says chill; Greg lights a joint. The microwave hums like it remembers the future. The air thickens. Cheese glows. Reality gets wobbly.</p>
+      <div class="file-copy">
+        <h2>File 01 — The Chedda Incident</h2>
+        <p>Somewhere between midnight hunger and poor judgment, Greg finds a foil pouch stamped in red: <em>PROJECT MF CHEDDA — DO NOT CONSUME.</em> Bigfoot says “light up first.” The microwave hums like it remembers the future. The air thickens. The cheese glows. Reality blinks.</p>
       </div>
     </section>
 
-    <!-- FILE 02 -->
-    <section class="section file">
-      <div class="media">
-        <video autoplay muted playsinline loop>
-          <source src="assets/video/file02.mp4" type="video/mp4" />
-        </video>
+    <section class="file">
+      <div class="file-media">
+        <video class="file-video" playsinline muted loop autoplay preload="metadata" src="assets/video/file02.mp4"></video>
       </div>
-      <div class="prose">
-        <h3>FILE 02 — The Pull</h3>
-        <p>The cheese doesn’t melt. It detonates politely. Walls stretch. Time forgets to be solid. Greg and Bigfoot levitate, snacks first. Somewhere inside the noise, the universe whispers, “You coming or nah?”</p>
+      <div class="file-copy">
+        <h2>File 02 — The Pull</h2>
+        <p>Golden liquid stretches the cabin walls into a spiral throat. Greg and Bigfoot lift, weightless. Snacks orbit like satellites. Somewhere in the echo, reality asks: “You sure you’re ready for this?”</p>
       </div>
     </section>
 
-    <!-- FILE 03 -->
-    <section class="section file">
-      <div class="media">
-        <video autoplay muted playsinline loop>
-          <source src="assets/video/file03.mp4" type="video/mp4" />
-        </video>
+    <section class="file">
+      <div class="file-media">
+        <video class="file-video" playsinline muted loop autoplay preload="metadata" src="assets/video/file03.mp4"></video>
       </div>
-      <div class="prose">
-        <h3>FILE 03 — Clockland Arrival</h3>
-        <p>Mushrooms breathe. Clocks sprout from dirt like guilty memories. The portal parks itself by two pyramids and a UFO that pretends not to stare.</p>
+      <div class="file-copy">
+        <h2>File 03 — Clockland Arrival</h2>
+        <p>Mushrooms breathe. Clocks grow like river stones. The portal lands them soft as an exhale—time is soup, gravity’s optional, and the sky is watching back.</p>
       </div>
     </section>
 
-    <!-- FILE 04 -->
-    <section class="section file">
-      <div class="media">
-        <video autoplay muted playsinline loop>
-          <source src="assets/video/file04.mp4" type="video/mp4" />
-        </video>
+    <section class="file">
+      <div class="file-media">
+        <video class="file-video" playsinline muted loop autoplay preload="metadata" src="assets/video/file04.mp4"></video>
       </div>
-      <div class="prose">
-        <h3>FILE 04 — Prophecy of the Shroom</h3>
-        <p>The elder cap exhales a ribbon of glyphs: <span class="quote">“Clockwise to forget… counterclockwise to feed the portal.”</span>
-           Greg nods like he understands. Bigfoot keeps eating.</p>
+      <div class="file-copy">
+        <h2>File 04 — Prophecy of the Shroom</h2>
+        <p>The elder cap grins and whispers: “<strong>Clockwise to forget… counterclockwise to feed the portal.</strong>” Bigfoot keeps eating. Greg pretends that’s normal.</p>
       </div>
     </section>
 
-    <!-- FILE 05 -->
-    <section class="section file">
-      <div class="media">
-        <video autoplay muted playsinline loop>
-          <source src="assets/video/file05.mp4" type="video/mp4" />
-        </video>
+    <section class="file">
+      <div class="file-media">
+        <video class="file-video" playsinline muted loop autoplay preload="metadata" src="assets/video/file05.mp4"></video>
       </div>
-      <div class="prose">
-        <h3>FILE 05 — The Glitch Return</h3>
-        <p>Static stitches the universe shut. The TV winks back on with a doppel-Greg. The portal purrs like it never left. End of file… for now.</p>
+      <div class="file-copy">
+        <h2>File 05 — The Glitch Return</h2>
+        <p>Back in the cabin—sort of. The TV won’t admit what it saw. Faces double, tape warps, and the cheese remembers their names.</p>
       </div>
     </section>
-
-    <section class="section end">
-      <p class="end-transmission">END TRANSMISSION • VOLUME 1</p>
-      <p class="small">TIN HAT CHEDDA™ — Powered by paranoia. Mint responsibly.</p>
-    </section>
-
   </main>
 
-  <script>
-    // Simple mute toggle for iOS (trailer only)
-    const vid = document.querySelector('.hero-video');
-    const btn = document.getElementById('muteBtn');
-    btn?.addEventListener('click', () => {
-      vid.muted = !vid.muted;
-      btn.textContent = vid.muted ? 'Unmute Audio' : 'Mute Audio';
-      btn.setAttribute('aria-pressed', String(!vid.muted));
-      // kick playback on iOS after interaction
-      vid.play().catch(()=>{});
-    });
-  </script>
+  <!-- END TRANSMISSION -->
+  <section class="end">
+    <h3>— End Transmission —</h3>
+    <p class="mono">Tin Hat Chedda™ Volume 1 has been logged. Further leaks pending signal strength.</p>
+  </section>
+
+  <!-- CREATOR NOTE -->
+  <footer class="creator">
+    <h4>Creator’s Note</h4>
+    <p>Greg MF Chedda returns under original authorship. New art, new canon, same tinfoil. If you know, you know.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
