@@ -1,151 +1,109 @@
-/* Tin Hat Chedda™ — Volume 1 Site Styles
-   Author: TINHATCHEDDA
-   Updated: hero video brightness + mobile padding fix
-*/
-
-:root {
-  --bg: #0d0e11;
-  --text: #e5e7eb;
-  --accent: #ffb74a;
-  --dim: #22242a;
-  --hero-dim: 0.28;
-  --hero-bright: 1.18;
-  --hero-contrast: 1.06;
-  --hero-saturate: 1.08;
-  font-family: "Space Grotesk", "IBM Plex Mono", monospace;
-  color-scheme: dark;
+/* ---------- Base ---------- */
+:root{
+  --bg:#0d0f12;
+  --panel:#12161b;
+  --ink:#e7edf4;
+  --muted:#9aa7b5;
+  --accent:#f3c34d;
+  --accent-2:#ffe08a33;
+  --ring:#ffffff14;
 }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-weight: 400;
-  line-height: 1.6;
-  overflow-x: hidden;
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:radial-gradient(1200px 800px at 50% -200px,#141922 0%,#0d0f12 55%,#0b0e12 100%);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Inter", "SF Pro Text", Arial, sans-serif;
+  /* bigger, responsive base size */
+  font-size:clamp(16px, 1.9vw, 18px);
+  line-height:1.55;
+  letter-spacing:.2px;
 }
 
-/* === HERO SECTION === */
-.hero {
-  position: relative;
-  min-height: 100svh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: calc(28px + env(safe-area-inset-bottom));
+/* ---------- Layout ---------- */
+.wrapper{max-width:1000px;margin:0 auto;padding:24px}
+.section{padding:28px 0}
+
+/* Headings scale nicely across devices */
+h1{font-size:clamp(32px, 6.5vw, 54px);letter-spacing:.06em;margin:0 0 10px}
+h2{font-size:clamp(22px, 3.6vw, 32px);margin:0 0 8px}
+h3{font-size:clamp(18px, 2.7vw, 22px);margin:0 0 8px}
+
+.sub{color:var(--muted);font-size:clamp(14px,1.8vw,16px)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  border:1px solid var(--ring);
+  background:linear-gradient(180deg,#ffce59 0%,#f0b63a 100%);
+  color:#1a1300;font-weight:700;
+  padding:.8rem 1.1rem;border-radius:14px;
+  box-shadow:0 10px 24px -12px #ffcf5c80, inset 0 0 0 1px #ffffff55;
+}
+.btn.secondary{
+  background:#1a2027;border-color:#28313b;color:#e9f1fa;
 }
 
-.hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 55%;
-  filter: brightness(var(--hero-bright))
-          contrast(var(--hero-contrast))
-          saturate(var(--hero-saturate));
-  z-index: 0;
+/* ---------- Cards / Files ---------- */
+.file{
+  background: linear-gradient(180deg,#10151b,#0f1318);
+  border:1px solid var(--ring);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 10px 30px -18px #000000aa, inset 0 1px 0 #ffffff08;
+  max-width:min(760px, 100%);
+  margin:0 auto 42px;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
-  opacity: var(--hero-dim);
-  z-index: 1;
+/* Media container – NO fixed height, keep full frame visible */
+.media{
+  background:#0c1015;
+  border:1px solid var(--ring);
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
 }
 
-.hero .content {
-  position: relative;
-  z-index: 2;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.28) 100%);
-  border-radius: 10px;
-  padding: 10px 14px;
-  display: inline-block;
-  margin-bottom: calc(8px + env(safe-area-inset-bottom));
-  text-shadow: 0 2px 18px rgba(0,0,0,.55);
+/* make videos/images fully visible and not cropped */
+.media video,.media img{
+  display:block;
+  width:100%;
+  height:auto;           /* key: keep aspect ratio */
+  object-fit:contain;    /* no cropping */
+  background:#0b0f14;
 }
 
-.hero h1 {
-  font-size: clamp(32px, 9vw, 60px);
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  margin: 0 0 0.4em;
-  color: #fff;
+/* subtle frame glow */
+.media::after{
+  content:"";position:absolute;inset:-1px;border-radius:14px;
+  box-shadow:0 0 0 1px #ffffff12, 0 25px 60px -30px #000 inset;
+  pointer-events:none;
 }
 
-.hero p {
-  font-size: clamp(16px, 3.8vw, 18px);
-  opacity: 0.9;
+.prose{padding:14px 2px}
+.prose p{margin:.35rem 0;color:#cbd5e1}
+
+/* Make captions/tiny text legible on phones */
+.small, .caption{color:var(--muted);font-size:clamp(14px,1.9vw,16px)}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:36px 0 12px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.hero-bar{display:flex;flex-wrap:wrap;gap:10px}
+
+/* ---------- Trailer block ---------- */
+.trailer{
+  max-width:min(900px,100%);
+  margin:12px auto 24px;
 }
 
-.cta-row {
-  margin-top: 1.5em;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-button, .cta {
-  background: var(--accent);
-  border: none;
-  color: #111;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.9em 1.6em;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 0 25px rgba(255,183,74,0.35);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-button:hover, .cta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(255,183,74,0.5);
-}
-
-.secondary {
-  background: transparent;
-  border: 1px solid #999;
-  color: #fff;
-  box-shadow: none;
-}
-
-@media (max-width: 390px) {
-  .hero h1 { font-size: clamp(28px, 8.5vw, 40px); }
-  .hero p  { font-size: clamp(14px, 3.8vw, 16px); }
-  .cta-row { gap: 10px; flex-wrap: wrap; }
-}
-
-/* === BODY SECTIONS === */
-section {
-  max-width: 800px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5em;
-  color: var(--accent);
-}
-
-p {
-  color: #d1d5db;
-  margin-bottom: 1em;
-}
-
-/* === END TRANSMISSION === */
-footer {
-  text-align: center;
-  padding: 60px 20px;
-  font-size: 0.9rem;
-  opacity: 0.6;
-  letter-spacing: 1px;
+/* ---------- Responsive spacing ---------- */
+@media (min-width:780px){
+  .wrapper{padding:36px}
+  .file{padding:20px;margin-bottom:54px}
+  .prose{padding:16px 4px}
 }
