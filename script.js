@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ROTATING TAGLINES (used on both pages)
+  // ROTATING TAGLINES
   const rotatingEls = document.querySelectorAll("#rotatingTagline");
   if (rotatingEls.length > 0) {
     const lines = [
