@@ -1,31 +1,29 @@
-// Tin Hat Chedda — Scripts
-
-// ---- Tilt (subtle, GPU-friendly, disabled for reduced motion) ----
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!prefersReduced) {
-  document.querySelectorAll('.tilt').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(800px) rotateX(${y * -6}deg) rotateY(${x * 6}deg) translateY(-2px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
+// Hero: ensure autoplay loop on some iOS builds
+const hv = document.getElementById('heroVideo');
+if (hv) {
+  hv.muted = true; hv.loop = true; hv.playsInline = true;
+  const tryPlay = () => hv.play().catch(()=>{});
+  document.addEventListener('touchstart', tryPlay, {once:true});
+  window.addEventListener('load', tryPlay);
 }
 
-// ---- Footer slogan rotator (optional) ----
+// Footer rotating slogans
 const slogans = [
-  'Powered by Paranoia.',
-  'Mint Responsibly.',
-  'Trust No Microwave.',
-  'Reality Melts at 420°F.',
-  'Decoding Reality Since 2025.'
+  "Powered by Paranoia",
+  "Mint Responsibly",
+  "Decoding Reality Since 2025",
+  "Clockwise to Forget — Counterclockwise to Feed the Portal",
+  "Where Conspiracy Meets Currency",
+  "Trust the Vibes, Verify the Blocks"
 ];
-const el = document.getElementById('footer-rotator');
-if (el){
-  let i = 0;
-  setInterval(()=>{ i=(i+1)%slogans.length; el.textContent = slogans[i]; }, 2600);
+const rotator = document.getElementById('footer-rotator');
+let i = 0;
+function swap() {
+  if (!rotator) return;
+  rotator.style.opacity = 0;
+  setTimeout(() => {
+    rotator.textContent = slogans[i = (i+1) % slogans.length];
+    rotator.style.opacity = 1;
+  }, 180);
 }
+if (rotator) setInterval(swap, 2400);
