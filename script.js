@@ -1,70 +1,62 @@
-/* TIN HAT CHEDDA — Interactions */
+/* ====== Audio toggle (if you add hum.mp3 later) ====== */
+const audio = document.getElementById('bedHum');
+const audioBtn = document.getElementById('audioToggle');
+if (audio && audioBtn) {
+  let enabled = false;
+  const setLabel = () => audioBtn.textContent = enabled ? 'Mute Audio' : 'Unmute Audio';
+  setLabel();
+  audioBtn.addEventListener('click', async () => {
+    enabled = !enabled;
+    setLabel();
+    try {
+      if (enabled) { await audio.play(); }
+      else { audio.pause(); }
+    } catch(e){ /* ignore mobile autoplay blocks */ }
+  });
+}
 
-// Rotate footer slogans + pulse color
+/* ====== Auto-start all inline videos (safely) ====== */
+document.querySelectorAll('video').forEach(v => {
+  v.muted = true; v.playsInline = true; v.setAttribute('playsinline','');
+  const playSafe = () => { v.play().catch(()=>{}); };
+  // play when visible
+  const io = new IntersectionObserver(([e])=>{
+    if (e.isIntersecting) playSafe();
+  }, {threshold:.25});
+  io.observe(v);
+});
+
+/* ====== Rotating footer slogans ====== */
 const slogans = [
-  "Powered by paranoia.",
-  "Mint responsibly.",
-  "Trust no chart.",
-  "Reality melts at 420°F.",
-  "Clockwise to forget. Counterclockwise to feed the portal."
+  'Powered by Paranoia // Decoding Reality Since 2025',
+  'Trust the Crumbs, Not the Source',
+  'Keep It Counterclockwise',
+  'Reality Melts at 420 °F',
+  'Tin Foil, Thick Skin, Thin Veil',
+  'We Do Our Own Research (Badly, But With Style)'
 ];
-(function rotator(){
-  const el = document.getElementById('rotating-text');
-  if(!el) return;
-  let i = 0;
-  el.textContent = slogans[0];
-  setInterval(()=>{
-    i = (i+1) % slogans.length;
-    el.textContent = slogans[i];
-  }, 2400);
-})();
+const rotator = document.getElementById('rotator');
+let i = 0;
+function tick(){
+  if(!rotator) return;
+  i = (i + 1) % slogans.length;
+  rotator.classList.add('fade-out');
+  setTimeout(()=>{
+    rotator.textContent = slogans[i];
+    rotator.classList.remove('fade-out');
+  }, 220);
+}
+setInterval(tick, 3800);
 
-// Optional: lightly swap the hero subtitle messages to feel “alive”
-const whispers = [
-  "Signal acquired.",
-  "Decryption nominal.",
-  "Static carries secrets.",
-  "The portal remembers.",
-  "If you know, you know."
-];
-(function subtitleRotator(){
-  const sub = document.querySelector('.subtitle');
-  if(!sub) return;
-  let i = 0;
-  setInterval(()=>{
-    i = (i+1) % whispers.length;
-    // alternate between the brand line and a whisper for vibe
-    sub.textContent = (i % 2 === 0) ? "Where Conspiracy Meets Currency" : whispers[i];
-  }, 3600);
-})();
-
-// Mobile-safe autoplay kick (iOS often needs a “nudge” after first gesture)
-(function autoplayNudge(){
-  const vids = Array.from(document.querySelectorAll('video'));
-  function tryPlay(v){
-    v.muted = true;
-    v.setAttribute('playsinline','');
-    const p = v.play();
-    if (p && typeof p.catch === 'function') p.catch(()=>{});
+/* ====== Gentle title shimmer pulse ====== */
+(function(){
+  const title = document.querySelector('.brand-gradient');
+  if(!title) return;
+  let t = 0;
+  function pulse(){
+    t += 0.008;
+    title.style.filter = `hue-rotate(${(t*360)%360}deg) drop-shadow(0 0 12px rgba(255,255,255,.08))`;
+    requestAnimationFrame(pulse);
   }
-  vids.forEach(tryPlay);
-  ['touchstart','scroll','click','visibilitychange'].forEach(evt=>{
-    window.addEventListener(evt, ()=>vids.forEach(tryPlay), {passive:true});
-  });
-})();
-
-// Unmute toggle (hero + files)
-(function audioToggle(){
-  const btn = document.getElementById('mute-toggle') || document.getElementById('audioBtn');
-  if(!btn) return;
-  const vids = Array.from(document.querySelectorAll('video'));
-  btn.addEventListener('click', ()=>{
-    const shouldMute = !vids.every(v => v.muted === true) ? true : false; // if any unmuted, mute all; else unmute all
-    const targetMute = !shouldMute; // we want to UNMUTE when user taps
-    vids.forEach(v => {
-      v.muted = !targetMute ? true : false; // keep logic simple: targetMute=true -> unmute
-      const p = v.play(); if (p && p.catch) p.catch(()=>{});
-    });
-    btn.textContent = (vids[0] && vids[0].muted) ? 'Unmute Audio' : 'Mute Audio';
-  });
+  pulse();
 })();
