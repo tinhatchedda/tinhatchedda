@@ -1,36 +1,39 @@
+// Rotating slogan
+const slogans = [
+  "Powered by paranoia.",
+  "Mint responsibly.",
+  "Trust the cheese. Question everything else.",
+  "Clocks are suggestions.",
+  "Broadcasting on 4:20 FM."
+];
+(function rotate() {
+  const el = document.getElementById('rotator');
+  if (!el) return;
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % slogans.length;
+    el.textContent = slogans[i];
+  }, 2600);
+})();
 
-// Audio toggle (requires user gesture on mobile)
-const audio = document.getElementById('hum');
-const toggle = document.getElementById('audioToggle');
-let audioEnabled = false;
-
-function tryPlay() {
-  if (!audioEnabled) return;
-  audio.volume = 0.25;
-  audio.play().catch(()=>{});
+// Mobile-safe audio toggle (unmutes all videos on tap)
+const audioBtn = document.getElementById('audioBtn');
+function setMuted(allMuted){
+  document.querySelectorAll('video').forEach(v=>{
+    v.muted = allMuted;
+    if (v.paused) v.play().catch(()=>{});
+  });
+}
+if (audioBtn){
+  audioBtn.addEventListener('click', ()=>{
+    const nowMuted = !document.getElementById('heroVideo').muted;
+    setMuted(nowMuted);
+    audioBtn.textContent = nowMuted ? 'Unmute Audio' : 'Mute Audio';
+  });
 }
 
-toggle?.addEventListener('click', () => {
-  audioEnabled = !audioEnabled;
-  toggle.setAttribute('aria-pressed', String(audioEnabled));
-  toggle.textContent = audioEnabled ? 'Mute Audio' : 'Unmute Audio';
-  if (audioEnabled) tryPlay(); else audio.pause();
+// Ensure inline autoplay on iOS
+document.querySelectorAll('video').forEach(v=>{
+  v.setAttribute('playsinline','');
+  v.play().catch(()=>{ /* iOS will start after first tap */ });
 });
-
-// Rotate slogans
-const slogans = window.__THC_SLOGANS__ || [];
-const sloganEl = document.getElementById('slogan');
-function cycleSlogan(i=0){
-  if (!sloganEl || slogans.length===0) return;
-  sloganEl.style.opacity = 0;
-  setTimeout(()=>{
-    sloganEl.textContent = slogans[i % slogans.length];
-    sloganEl.style.opacity = 1;
-  }, 200);
-  setTimeout(()=>cycleSlogan(i+1), 4000);
-}
-cycleSlogan(0);
-
-// Attempt autoplay after user scroll/interaction (mobile)
-window.addEventListener('scroll', tryPlay, {passive:true});
-window.addEventListener('pointerdown', tryPlay, {passive:true});
