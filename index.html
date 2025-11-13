@@ -2,55 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tin Hat Chedda — Entry Node</title>
+  <title>Tin Hat Chedda™ — Volume 1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="landing-page">
+
+  <!-- HERO VIDEO BACKGROUND -->
   <div class="hero-video-wrap">
     <video
-      id="heroTrailer"
+      id="heroVideo"
       class="hero-video"
+      src="assets/video/vol1-trailer.mp4"
       autoplay
       muted
       loop
       playsinline
-    >
-      <source src="assets/video/vol1-trailer.mp4" type="video/mp4" />
-    </video>
+    ></video>
     <div class="hero-overlay"></div>
   </div>
 
+  <!-- HEADER -->
   <header class="site-header hero-header">
     <div class="logo-lockup">
-      <span class="site-title-gradient">TIN HAT CHEDDA™</span>
-      <span class="site-tagline">Where Conspiracy Meets Currency</span>
+      <a href="index.html" class="site-title-link">
+        <div class="site-title-gradient">TIN HAT CHEDDA™</div>
+      </a>
+      <div class="site-tagline">Where Conspiracy Meets Currency</div>
     </div>
     <nav class="hero-nav">
-      <a href="incident.html" class="nav-link">Enter the Files</a>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="incident.html" class="nav-link">The Files</a>
     </nav>
   </header>
 
+  <!-- MAIN HERO CONTENT -->
   <main class="hero-main">
     <section class="hero-content">
-      <h1 class="hero-heading">The Chedda Files — Vol. 1</h1>
+      <p class="eyebrow">Volume 1 Anomaly</p>
+      <h1 class="hero-heading">The Chedda Incident</h1>
       <p class="hero-subcopy">
-        Classified test footage recovered from a nacho-based anomaly.
-        Trailer loops below. If you’re seeing this, you’re already in
-        too deep.
+        One paranoid stoner. One nacho-obsessed Bigfoot. One classified block
+        of government cheese that melted a hole straight through reality.
+      </p>
+      <p class="hero-subcopy">
+        The trailer you’re seeing is a recovered anomaly broadcast. The full
+        incident log lives in the files node below. Enter at your own risk.
       </p>
 
       <div class="hero-actions">
         <a href="incident.html" class="btn-primary">Enter the Files</a>
-        <button id="muteToggle" class="btn-ghost">Unmute Audio</button>
+        <button id="unmuteBtn" class="btn-ghost" type="button">
+          Unmute Audio
+        </button>
       </div>
 
       <p class="hero-footnote">
         <span class="dot-glow"></span>
-        Best viewed slightly baked, volume up.
+        If the trailer stutters, it’s probably not your connection. Reality
+        doesn’t love being replayed.
       </p>
     </section>
   </main>
+
+  <footer class="site-footer">
+    TIN HAT CHEDDA™ — Classified Multiverse Node
+  </footer>
 
   <script src="script.js"></script>
 </body>
