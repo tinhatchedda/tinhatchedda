@@ -2,453 +2,302 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tin Hat Chedda™ — The Chedda Files Vol. 1</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <title>Tin Hat Chedda — The Files</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/script.js"></script>
 </head>
-<body class="page-files">
+<body class="files-body">
+  <!-- SITE HEADER -->
   <header class="site-header">
-    <div class="brand">
-      <div class="brand-title">TIN HAT CHEDDA™</div>
-      <div class="brand-tagline">Classified Multiverse Node</div>
+    <div class="site-brand">
+      <div class="site-title">
+        <span class="title-accent">TIN HAT CHEDDA</span><span class="title-mark">™</span>
+      </div>
+      <div class="site-subtitle">Classified Multiverse Node</div>
     </div>
-    <nav class="site-nav">
+
+    <nav class="main-nav">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="incident.html" class="nav-link active">The Files</a>
+      <a href="incident.html" class="nav-link nav-link-active">The Files</a>
     </nav>
   </header>
 
-  <main class="container">
+  <main id="files" class="files-main">
 
-    <!-- ARCHIVE NOTE WITH HIDDEN CODE -->
-    <section class="card archive-card">
-      <p class="eyebrow">ARCHIVE NOTE</p>
-      <h1 class="section-title">Signal Contamination Advisory</h1>
+    <!-- ARCHIVE NOTE / HIDDEN MESSAGE -->
+    <section class="file-panel archive-panel">
+      <h3 class="pill-label">ARCHIVE NOTE</h3>
+      <h1 class="panel-title">Signal Contamination Advisory</h1>
 
       <p>
-        This
-        <span class="code-letter" style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;">a</span
-        >rchive was rebuilt from anomaly snapshots, shredded logs, scrambled
-        nacho-field readings, and out-of-order cabin footage. The reconstruction
-        isn’t
-        <span class="code-letter" style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;">c</span
-        >omplete — it’s aggressive,
-        <span class="code-letter" style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;">c</span
-        >haotic, corrupted at the edges, occasionally laced with extra cosmic
-        artifacts and paranoid side-channels. Any attempt to “clean it u<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >p</span
-        >” tends to send out new glitches, spawn fresh paradigm errors, and twist
-        timelines, so the curre<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >n</span
-        >t log is left as-is. Hidden anomaly tags have been embedded into the
-        n<span class="code-letter" style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >o</span
-        >ise, s<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >c</span
-        >attered across letters, c<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >l</span
-        >inging to old words, hiding in plain sigh<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >o</span
-        >n, mutating alo<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >n</span
-        >g the margins, and shimmering at the edge of sen<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >e</span
-        >nce for anyone paying clo<span
-          class="code-letter"
-          style="color:#3FF4FB;text-shadow:0 0 8px #3FF4FB;"
-          >s</span
-        >e attention.
+        This archive was rebuilt from anomaly snapshots, shredded logs, scrambled nacho-field readings, and
+        out-of-order cabin footage. The reconstruction isn’t <span class="glow-letter cyan">c</span>omplete — it’s aggressive,
+        chaotic, corrupted at the edges, occasionally laced with extra <span class="glow-letter cyan">o</span>dd artifacts and paranoid
+        side-channels. Any attempt to “clean it up” tends to spawn new g<span class="glow-letter cyan">l</span>itches, extra logs, phantom
+        frames, and temporal misfires, so the current log is l<span class="glow-letter cyan">o</span>fted in its own weird orbit and left
+        as-is.
       </p>
 
       <p>
-        Off-record: the multiverse analysts who actually stared into this thing
-        learned one simple pattern. The ones who never blinked, watched the
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">t</span
-        >raffic in the static, followed the recursive rumors, tracked the silent
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">r</span
-        >outes between frames, listened to the odd hums bubbling
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">u</span
-        >p under the dialogue, read between the scrambled
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">s</span
-        >ubtitles, and traced the stray
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">t</span
-        >timestamps found their way through. They noticed the
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">c</span
-        >ounterfeit echoes at the edges, watched the signal
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">h</span
-        >iccup when copies slipped in, followed the faint afterimag<span
-          class="code-letter"
-          style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;"
-          >e</span
-        >s of real moments, read the margin
-        <span class="code-letter" style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;">d</span
-        >oodles from bored techs, double-checked the glitch fee<span
-          class="code-letter"
-          style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;"
-          >d</span
-        >back, and arrived at the same impolite ide<span
-          class="code-letter"
-          style="color:#F9E46B;text-shadow:0 0 8px #F9E46B;"
-          >a</span
-        >.
+        Off-record: the multiverse analysts who actually stared into this thing learned one simple pattern. The
+        ones who never blinked, watched the n<span class="glow-letter cyan">o</span>ise, traced the odds, spotted the c
+        <span class="glow-letter cyan">l</span>ones at the edges, followed the glitches, rode the ec<span class="glow-letter cyan">l</span>ipses,
+        found the hidden s<span class="glow-letter cyan">e</span>ams, trusted their gut fe<span class="glow-letter cyan">e</span>lings, and ignored the
+        di<span class="glow-letter cyan">s</span>traction all landed on the same conclusion:
+        <span class="hidden-phrase">
+          <span class="glow-letter yellow">T</span>
+          <span class="glow-letter yellow">r</span>
+          <span class="glow-letter yellow">u</span>
+          <span class="glow-letter yellow">s</span>
+          <span class="glow-letter yellow">t</span>
+          <span class="glow-letter yellow"> </span>
+          <span class="glow-letter yellow">C</span>
+          <span class="glow-letter yellow">h</span>
+          <span class="glow-letter yellow">e</span>
+          <span class="glow-letter yellow">d</span>
+          <span class="glow-letter yellow">d</span>
+          <span class="glow-letter yellow">a</span>.
+        </span>
       </p>
     </section>
 
     <!-- FILE 01 -->
-    <section class="card file-card">
-      <h2 class="file-title">File 01 — The Chedda Incident</h2>
-      <div class="file-layout">
-        <div class="file-media">
-          <video
-            class="file-video thc-video"
-            src="assets/video/file01.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
-        </div>
-        <div class="file-copy">
-          <p>
-            Somewhere between midnight hunger and poor judgment, Greg finds a foil pouch
-            stamped in angry red letters:
-            <strong>PROJECT MF CHEDDA — DO NOT CONSUME.</strong> Bigfoot tells him to chill.
-            Greg lights a joint instead. The microwave hums like it’s remembering the
-            future. The air thickens. The cheese glows.
-          </p>
-          <p>
-            Reality kinks sideways. A spiral of molten cheddar punches through the cabin
-            ceiling, dragging ash, crumbs, and loose thoughts into orbit. Greg swears he
-            can hear the universe buffering.
-          </p>
-        </div>
+    <section class="file-panel">
+      <h2 class="panel-title">File 01 — The Chedda Incident</h2>
+      <p>
+        Greg was just trying to microwave a midnight snack and accidentally aggro-pinged the Nacho Continuum.
+        Government-stamped cheese, a bored Bigfoot, and one cosmic TV dinner later, reality folded into a
+        question-mark vortex over the kitchen table.
+      </p>
+
+      <div class="video-frame">
+        <video
+          src="assets/video/file01.mp4"
+          class="file-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
       </div>
     </section>
 
-    <!-- FILE 02 -->
-    <section class="card file-card">
-      <h2 class="file-title">File 02 — The Pull</h2>
-      <div class="file-layout">
-        <div class="file-media">
-          <video
-            class="file-video thc-video"
-            src="assets/video/file02.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
-        </div>
-        <div class="file-copy">
-          <p>
-            The cheese doesn’t melt — it detonates softly, like a star folding in on
-            itself. The cabin forgets how to be solid. Greg and Bigfoot are lifted,
-            laughing, screaming, praying — it’s all the same sound now.
-          </p>
-          <p>
-            Time stretches into orange tunnels. Clocks spin out of their frames.
-            Nacho shrapnel floats like tiny satellites. Bigfoot rides the pull with a
-            nacho still in his hand. Greg tumbles through the vortex in slow motion,
-            eyes wide, trying to grab his floating joint. No matter how
-            hard reality spins, it never leaves his sight.
-          </p>
-        </div>
+    <!-- FILE 02 (JOINT FALLING, GREG TRYING TO CATCH IT) -->
+    <section class="file-panel">
+      <h2 class="panel-title">File 02 — The Pull</h2>
+      <p>
+        The vortex doesn’t just warp the room — it grabs everything that believes in gravity. Nacho shrapnel,
+        clocks, junk mail, Greg’s paranoia, and finally the one thing he never meant to drop: his joint.
+      </p>
+      <p>
+        In this log, the joint slips out of Greg’s mouth and spins in slow motion toward the cheese tunnel.
+        Greg’s eyes lock onto it like it’s the last brain cell he has left. While Bigfoot keeps casually eating,
+        Greg paddles the air, twisting and reaching, doing whatever he can to snatch it back before it
+        crosses the event-munch horizon.
+      </p>
+
+      <div class="video-frame">
+        <video
+          src="assets/video/file02.mp4"
+          class="file-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
       </div>
     </section>
 
     <!-- FILE 03 -->
-    <section class="card file-card">
-      <h2 class="file-title">File 03 — The Tin Hat Protocol</h2>
-      <div class="file-layout">
-        <div class="file-media">
-          <video
-            class="file-video thc-video"
-            src="assets/video/file03.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
-        </div>
-        <div class="file-copy">
-          <p>
-            Greg’s emergency plan is simple: when in doubt, add more foil. He upgrades
-            his tin hat mid-teleport, crimping layers like he’s speedrunning a DIY
-            tutorial for quantum paranoia.
-          </p>
-          <p>
-            The hat doesn’t block the signal — it tunes it. Suddenly Greg can see
-            probability trails, echo timelines, and what Bigfoot would look like if
-            he’d said no to the nachos. He doesn’t like that version, so he leans
-            harder into this one.
-          </p>
-        </div>
+    <section class="file-panel">
+      <h2 class="panel-title">File 03 — The Tin Hat Protocol</h2>
+      <p>
+        Somewhere between panic and enlightenment, Greg starts treating the vortex like an update he didn’t agree
+        to. Tinfoil hats become firewall patches. Couch cushions become sandbags against cosmic packet loss. The
+        cabin turns into a low-budget observatory with very high scientists.
+      </p>
+
+      <div class="video-frame">
+        <video
+          src="assets/video/file03.mp4"
+          class="file-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
       </div>
     </section>
 
     <!-- FILE 04 -->
-    <section class="card file-card">
-      <h2 class="file-title">File 04 — Spore Prophecy</h2>
-      <div class="file-layout">
-        <div class="file-media">
-          <video
-            class="file-video thc-video"
-            src="assets/video/file04.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
-        </div>
-        <div class="file-copy">
-          <p>
-            The landing isn’t really a landing — more like getting gently misfiled
-            into a different forest. The mushrooms here are big enough to file taxes.
-            Their caps glow with symbols that weren’t in any of Greg’s conspiracy
-            folders.
-          </p>
-          <p>
-            One spore cloud forms a repeating message: twist the dial clockwise to
-            forget, counterclockwise to feed the portal. Greg stares at it for a long
-            time. Bigfoot twists nothing, remembers everything, and keeps walking.
-          </p>
-        </div>
+    <section class="file-panel">
+      <h2 class="panel-title">File 04 — Spore Prophecy</h2>
+      <p>
+        Out in the mycelium district, time runs on mushroom logic. Greg and Bigfoot stumble into a grove of
+        sentient caps that speak only in rings and riddles. One central spore-god offers a simple mechanic:
+        twist clockwise to forget, twist counter-clockwise to feed the portal.
+      </p>
+      <p>
+        Greg wants to remember. Bigfoot wants more snacks. The mushrooms want content. Nobody agrees on which
+        way to turn, but the vortex hears every vote.
+      </p>
+
+      <div class="video-frame">
+        <video
+          src="assets/video/file04.mp4"
+          class="file-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
       </div>
     </section>
 
     <!-- FILE 05 -->
-    <section class="card file-card">
-      <h2 class="file-title">File 05 — The Glitch Return</h2>
-      <div class="file-layout">
-        <div class="file-media">
-          <video
-            class="file-video thc-video"
-            src="assets/video/file05.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
-        </div>
-        <div class="file-copy">
-          <p>
-            Eventually, the universe gets tired of being inside out and snaps them
-            back toward something that looks like a cabin again. The pizza is
-            different. The TV is different. The timeline swears nothing has changed.
-          </p>
-          <p>
-            Greg’s reflection on the screen blinks a few frames late. Bigfoot’s
-            nachos refill themselves whenever no one is looking. Somewhere in the
-            background, the portal pretends to be a question mark.
-          </p>
-        </div>
+    <section class="file-panel">
+      <h2 class="panel-title">File 05 — The Glitch Return</h2>
+      <p>
+        The cabin reloads like a half-remembered save file. The cheese spiral stutters between frames, Greg’s
+        reflection blinks before he does, and Bigfoot keeps eating as if nothing has ever happened in any
+        universe. Reality feels like someone keeps hitting “undo” and “export” at the same time.
+      </p>
+
+      <div class="video-frame">
+        <video
+          src="assets/video/file05.mp4"
+          class="file-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
       </div>
     </section>
 
-    <!-- HOLOGRAM GRID -->
-    <section class="card holo-card">
-      <h2 class="file-title">Last Known Walking Interdimensional Grid</h2>
+    <!-- HOLOGRAM WALK LOOP -->
+    <section class="file-panel holo-panel">
+      <h2 class="panel-title">Last Known Walking Interdimensional Grid</h2>
       <p>
-        This loop was recovered from an unstable holo-feed. Greg and Bigfoot walk
-        endlessly as the grid generates new platforms under their feet — a spatial
-        treadmill for the chronically baked.
+        This loop was recovered from an unstable holo-feed. Greg and Bigfoot walk endlessly across a stitched-up
+        grid while the system keeps generating new light platforms under their feet — a spatial treadmill for the
+        chronically baked.
       </p>
       <p>
-        The transmission loops forever. Just like their walk. Just like time. Just
-        like your last edible.
+        The transmission loops forever. Just like their walk. Just like time. Just like your last edible.
       </p>
-      <div class="alert-badge">Live Feed Loop: Subjects on autopilot. Reality not found.</div>
 
-      <div class="holo-terminal">
-        <div class="holo-terminal-header">
+      <div class="holo-readout">
+        <div class="holo-meta">
           <span>FEED: 7B_Ω</span>
           <span>SIGNAL: UNSTABLE</span>
         </div>
-        <div class="holo-terminal-body">
+
+        <div class="video-frame holo-video-frame">
           <video
-            id="holo-video"
-            class="holo-video thc-video"
+            id="holo-grid"
             src="assets/video/holo-grid.mp4"
+            class="file-video"
             autoplay
             muted
             loop
             playsinline
           ></video>
         </div>
-        <div class="holo-terminal-footer">
+
+        <div class="holo-footer">
           <span>SUBJECTS: GREG // BIGFOOT</span>
           <span>STATUS: WALKING INTERDIMENSIONAL GRID</span>
         </div>
-      </div>
 
-      <p class="tiny-copy">
-        If they ever reach the end of the grid, the universe has to pick a new main
-        character.
-      </p>
-    </section>
-
-    <!-- BIOS -->
-    <section class="card bio-card">
-      <h2 class="section-title">Meet the Usual Suspects</h2>
-
-      <div class="bio-grid">
-        <article class="bio-entry">
-          <h3>Greg — Subject: The Paranoid Optimist</h3>
-          <p>
-            Greg didn’t mean to become a multiverse node. He just followed too many
-            late-night threads, smoked too many “this one’s different” joints, and
-            connected one piece of government cheese that probably shouldn’t have
-            existed. He went hunting for proof of Bigfoot and accidentally filmed his
-            own origin story instead.
-          </p>
-          <p>
-            He’s paranoid, sure — but he’s not wrong nearly as often as everyone
-            would like. Greg connects dots no one else even sees… usually while
-            incredibly baked, with his joint welded to his mouth like a cursor.
-          </p>
-        </article>
-
-        <article class="bio-entry">
-          <h3>Bigfoot — Subject: The Chill</h3>
-          <p>
-            Eight feet of vibes. Snack-based belief system. Camera shy, not clout
-            shy. Bigfoot has been dodging phone cameras and hunters since before the
-            internet, mostly because he refuses to get tagged in anything.
-          </p>
-          <p>
-            He runs on a strict diet of smoke, snacks, and not caring what dimension
-            he’s currently in as long as there’s food. When Greg showed up trying to
-            “get evidence,” Bigfoot let him stay — mostly because he kept bringing
-            better nachos.
-          </p>
-        </article>
-
-        <article class="bio-entry">
-          <h3>7B_Ω — Subject: The Intern</h3>
-          <p>
-            Officially: a background process assigned to monitor cheddar-based
-            anomalies. Unofficially: the overworked cosmic intern who keeps stamping
-            “do not consume” on things nobody listens to.
-          </p>
-          <p>
-            7B_Ω is the one who filed this entire mess under “educational material”
-            instead of “containment breach,” which is how you’re reading it now.
-            Whether that was an accident or part of the protocol is still redacted.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- HIGH COUNCIL TEASER PANEL + MODAL -->
-    <section class="high-council-shell">
-      <!-- hidden toggle for CSS-only modal -->
-      <input type="checkbox" id="hc-toggle" class="hc-toggle" />
-
-      <section class="card high-council-card">
-        <div class="card-header">
-          <span class="card-kicker">CLASSIFIED FILE</span>
-          <h2 class="card-title">VOL 2 — THE HIGH COUNCIL</h2>
-        </div>
-
-        <p class="card-body">
-          Access Level: Nacho Continuum Redacted. Unauthorized viewing may result in
-          spontaneous timeline drift, snack shortages, and a sudden distrust of every
-          clone you’ve ever met.
+        <p class="holo-warning">
+          If they ever reach the end of the grid, the universe has to pick a new main character.
         </p>
-
-        <div class="classified-status">
-          <span class="status-pill status-locked">LOCKED</span>
-          <span class="status-note">Council node: location redacted.</span>
-        </div>
-
-        <label for="hc-toggle" class="btn btn-classified">
-          &#128274; Attempt Access
-        </label>
-
-        <p class="classified-footnote">
-          If you think you’re cleared for this and you’re wrong, you probably won’t
-          remember trying.
-        </p>
-      </section>
-
-      <!-- modal -->
-      <div class="hc-modal-backdrop">
-        <label for="hc-toggle" class="hc-modal-overlay"></label>
-        <div class="hc-modal-panel">
-          <label for="hc-toggle" class="hc-modal-close">&times;</label>
-
-          <p class="modal-kicker">HIGH COUNCIL AUTH CHECK</p>
-          <h3 class="modal-title">Intergalactic Strain Protocol</h3>
-
-          <p class="modal-text">
-            The Council whispers of strains not grown on Earth. Bud so cosmic the smoke
-            curls into prophecies and ash falls in the shape of forgotten constellations.
-          </p>
-          <p class="modal-text">
-            They say the answer reveals itself only when your mind drifts past the Oort
-            Cloud, when your lungs forget gravity, and your thoughts tune to a frequency
-            shared by stoners and starships.
-          </p>
-          <p class="modal-text">
-            Until then, every “password” is just noise from a lower timeline.
-          </p>
-
-          <p class="modal-footnote">
-            Come back when you’re higher than your last theory.
-          </p>
-        </div>
       </div>
     </section>
 
-    <!-- INTERGALACTIC STRAINS RIDDLE CARD -->
-    <section class="card strains-card">
-      <h2 class="section-title">Vol 2 Teaser — Intergalactic Strains</h2>
+    <!-- MEET THE USUAL SUSPECTS -->
+    <section class="file-panel">
+      <h3 class="pill-label">Meet the Usual Suspects</h3>
+
+      <h2 class="panel-title">Greg — Subject: The Paranoid Optimist</h2>
       <p>
-        Somewhere beyond the Nacho Continuum, there’s a grow op that never shows up on
-        maps. The buds hum at a frequency you can feel in your teeth. The smoke doesn’t
-        just rise — it remembers.
+        Greg didn’t mean to become the protagonist of a classified cheese event. He was chasing proof of Bigfoot,
+        obsessing over grainy screenshots and message-board lore, and accidentally filmed his own origin story
+        instead.
       </p>
       <p>
-        Rumor says the High Council built their whole voting system on intergalactic
-        strains: each hit shifts the timeline, each exhale rewrites which version of you
-        gets to wake up tomorrow.
+        He’s paranoid, sure — but he’s not wrong nearly as often as everyone would like. Greg connects dots no one
+        else even sees… usually while incredibly baked, with his joint welded to his mouth like a cursor.
+      </p>
+
+      <h2 class="panel-title">Bigfoot — Subject: The Chill</h2>
+      <p>
+        Eight feet of vibes. Snack-based belief system. Camera shy, not clout shy. Bigfoot has been dodging phone
+        cameras and hunters since before the internet, mostly because he refuses to get tagged in anything.
       </p>
       <p>
-        One of those strains carries the key to this archive. No QR code, no seed phrase,
-        no roadmap — just a moment where you’re exactly high enough to see the pattern
-        that was always there.
+        He runs on a strict diet of smoke, snacks, and not caring what dimension he’s currently in as long as
+        there’s food. When Greg showed up trying to “get evidence,” Bigfoot let him stay — mostly because he kept
+        bringing better nachos.
       </p>
-      <p class="tiny-copy">
-        If this paragraph makes perfect sense to you, you’re probably closer than
-        everyone else.
+
+      <h2 class="panel-title">7B_Ω — Subject: The Intern</h2>
+      <p>
+        Officially: a background process assigned to monitor cheddar-based anomalies. Unofficially: the overworked
+        cosmic intern who keeps stamping “do not consume” on things nobody listens to.
+      </p>
+      <p>
+        7B_Ω is the one who filed this entire mess under “educational material” instead of “containment breach,”
+        which is why you’re reading it now. Whether that was an accident or part of the protocol is still
+        redacted.
       </p>
     </section>
 
-    <!-- END CARD -->
-    <section class="card end-card">
-      <p class="end-transmission">[END TRANSMISSION]</p>
+    <!-- VOL 2 — HIGH COUNCIL (NO "TEASER" WORD) -->
+    <section class="file-panel">
+      <h3 class="pill-label">Classified File</h3>
+      <h2 class="panel-title">Vol 2 — The High Council</h2>
+
       <p>
-        This file has been pulled from the Nacho Continuum Archive. Any resemblance to real
-        timelines is purely conspiratorial.
+        Access Level: Nacho Continuum Redacted. Unauthorized viewing may result in spontaneous timeline drift,
+        snack shortages, and a sudden distrust of every clone you’ve ever met.
       </p>
-      <p class="footnote">TIN HAT CHEDDA™ — Classified Multiverse Node</p>
+      <p>
+        LOCKED Council node: location redacted.
+      </p>
+
+      <button class="access-btn">🔒 Attempt Access</button>
+
+      <p class="file-warning">
+        If you think you’re cleared for this and you’re wrong, you probably won’t remember trying.
+      </p>
+    </section>
+
+    <!-- INTERGALACTIC STRAIN RIDDLE (NO TEASER TEXT, JUST LORE) -->
+    <section class="file-panel">
+      <h3 class="pill-label">High Council Auth Check</h3>
+      <h2 class="panel-title">Intergalactic Strain Protocol</h2>
+
+      <p>
+        The Council whispers of strains not grown on Earth. Bud so cosmic the smoke curls into prophecies and ash
+        falls in the shape of forgotten constellations.
+      </p>
+      <p>
+        They say the answer reveals itself only when your mind drifts past the Oort Cloud, when your lungs forget
+        gravity, and your thoughts tune to a frequency shared by stoners and starships.
+      </p>
+      <p>
+        Until then, every “password” is just noise from a lower timeline. Come back when you’re higher than your
+        last theory.
+      </p>
     </section>
 
   </main>
+
+  <footer class="site-footer">
+    <span>TIN HAT CHEDDA™ — Classified Multiverse Node</span>
+  </footer>
 </body>
 </html>
