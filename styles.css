@@ -488,3 +488,161 @@ main {
     align-items: center;
   }
 }
+/* === HIGH COUNCIL PANEL & MODAL === */
+
+.high-council-shell {
+  margin-top: 32px;
+  position: relative;
+}
+
+.hc-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.high-council-card {
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  background: radial-gradient(circle at top left, #1b2743 0%, #050714 70%);
+  box-shadow: 0 0 28px rgba(0, 255, 204, 0.16);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.card-kicker {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 255, 204, 0.85);
+}
+
+.card-title {
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card-body {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.classified-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.status-pill {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 76, 76, 0.8);
+  color: #ff6b6b;
+}
+
+.status-note {
+  opacity: 0.8;
+}
+
+.btn-classified {
+  width: 100%;
+  margin-top: 4px;
+  border-color: rgba(0, 255, 204, 0.75);
+  color: var(--accent-teal);
+}
+
+/* Footnote under HC card */
+.classified-footnote {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Modal */
+
+.hc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, rgba(3, 255, 213, 0.08), #02030a);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.hc-modal-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hc-modal-panel {
+  position: relative;
+  width: min(420px, 90vw);
+  padding: 1.5rem 1.25rem 1.75rem;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, #141f35 0%, #050812 70%);
+  border: 1px solid rgba(0, 255, 200, 0.4);
+  box-shadow: 0 0 40px rgba(0, 255, 200, 0.2);
+  z-index: 1;
+}
+
+.hc-modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+}
+
+.modal-kicker {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(0, 255, 200, 0.9);
+  margin-bottom: 4px;
+}
+
+.modal-title {
+  font-size: 1.05rem;
+  margin: 0 0 10px;
+}
+
+.modal-text {
+  font-size: 14px;
+  color: var(--text-soft);
+  margin: 6px 0;
+}
+
+.modal-footnote {
+  margin-top: 10px;
+  font-size: 11px;
+  color: rgba(249, 228, 107, 0.9);
+}
+
+/* show modal when checkbox is checked */
+.high-council-shell .hc-toggle:checked ~ .hc-modal-backdrop {
+  display: flex;
+}
+
+/* === STRAINS CARD === */
+
+.strains-card {
+  margin-top: 26px;
+  background: radial-gradient(circle at top, #22183f, #050714 65%);
+  border-color: rgba(255, 216, 87, 0.45);
+  box-shadow: 0 0 32px rgba(255, 216, 87, 0.18);
+}
