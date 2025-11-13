@@ -1,29 +1,37 @@
-// script.js
+// Basic JS for hero audio + small niceties
 
-// HERO AUDIO TOGGLE (HOME PAGE)
-const heroVideo = document.querySelector(".hero-video");
-const heroToggleBtn = document.getElementById("hero-audio-toggle");
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
 
-if (heroVideo && heroToggleBtn) {
-  heroToggleBtn.addEventListener("click", () => {
-    const isMuted = heroVideo.muted;
-    heroVideo.muted = !isMuted;
-    heroToggleBtn.textContent = isMuted ? "Mute Audio" : "Unmute Audio";
+  // HERO AUDIO TOGGLE
+  const heroVideo = document.getElementById("heroVideo");
+  const heroAudioToggle = document.getElementById("heroAudioToggle");
 
-    // try to play in case browser blocked autoplay with sound
-    if (!heroVideo.paused) return;
-    heroVideo
-      .play()
-      .catch(() => {
-        // ignore autoplay errors silently
-      });
-  });
-}
+  if (heroVideo && heroAudioToggle) {
+    heroAudioToggle.addEventListener("click", () => {
+      const nowMuted = !heroVideo.muted;
+      heroVideo.muted = nowMuted;
 
-// SMALL NICE-TO-HAVE: mark active nav link by pathname
-const navLinks = document.querySelectorAll(".main-nav .nav-link");
-navLinks.forEach((link) => {
-  if (link.href === window.location.href) {
-    link.classList.add("active");
+      heroAudioToggle.textContent = nowMuted ? "Unmute Audio" : "Mute Audio";
+
+      // try to play if browser paused on unmute
+      heroVideo
+        .play()
+        .catch(() => {
+          // autoplay might be blocked; ignore
+        });
+    });
   }
+
+  // Set active nav by body class (extra safety)
+  const navLinks = document.querySelectorAll(".site-nav .nav-link");
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (body.classList.contains("page-home") && href === "index.html") {
+      link.classList.add("active");
+    }
+    if (body.classList.contains("page-files") && href === "incident.html") {
+      link.classList.add("active");
+    }
+  });
 });
