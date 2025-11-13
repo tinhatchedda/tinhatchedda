@@ -5,48 +5,64 @@
   <title>Tin Hat Chedda™ — Classified Multiverse Node</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
-<body class="home-page">
-  <!-- HERO VIDEO BACKGROUND -->
-  <div class="hero-wrapper">
-    <video
-      class="hero-video"
-      src="assets/video/vol1-trailer.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-    ></video>
+<body class="page-home">
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-title">TIN HAT CHEDDA™</div>
+      <div class="brand-tagline">Classified Multiverse Node</div>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="incident.html" class="nav-link">The Files</a>
+    </nav>
+  </header>
 
-    <div class="hero-overlay"></div>
-
-    <header class="site-header">
-      <div class="logo-lockup">
-        <span class="logo-text gradient-text">TIN HAT CHEDDA™</span>
-        <span class="logo-tagline">Classified Multiverse Node</span>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-video-wrap">
+        <video
+          id="heroVideo"
+          class="hero-video"
+          src="assets/video/vol1-trailer.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <div class="hero-gradient"></div>
       </div>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="incidents.html" class="nav-link">The Files</a>
-      </nav>
-    </header>
 
-    <main class="hero-content">
-      <h1 class="hero-title">Where Conspiracy Meets Currency</h1>
-      <p class="hero-subtitle">
-        Recovered transmissions from the Nacho Continuum. Viewer discretion:
-        munchies highly probable.
+      <div class="hero-content container">
+        <h1 class="hero-title">Recovered transmissions from the Nacho Continuum.</h1>
+        <p class="hero-subtitle">
+          Viewer discretion: munchies highly probable.  
+          Time dilation not covered by support.
+        </p>
+
+        <div class="hero-actions">
+          <a href="incident.html" class="btn btn-primary">Enter the Files</a>
+          <button id="heroAudioToggle" class="btn btn-ghost">Unmute Audio</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SMALL TEASE BELOW HERO -->
+    <section class="tease-section container">
+      <p class="tease-line">
+        Classified dump: <span class="tease-pill">Vol. 1 — The Chedda Incident Logs</span>
       </p>
+      <p class="tease-line soft">
+        If you’re seeing this, some paranoid intern forgot to scrub the archive.
+      </p>
+    </section>
+  </main>
 
-      <div class="hero-actions">
-        <a href="incidents.html" class="btn btn-primary">Enter the Files</a>
-        <button id="hero-audio-toggle" class="btn btn-ghost">
-          Unmute Audio
-        </button>
-      </div>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <span>TIN HAT CHEDDA™ — Node 7B_Ω</span>
+    <span>// Unauthorized duplication may trigger spontaneous synchronicities.</span>
+  </footer>
 </body>
 </html>
