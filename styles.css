@@ -646,3 +646,175 @@ main {
   border-color: rgba(255, 216, 87, 0.45);
   box-shadow: 0 0 32px rgba(255, 216, 87, 0.18);
 }
+/* ============================================================
+   HOLOGRAPHIC HIGHLIGHTS • SECRET LETTER GLOWS • CHARACTER BIOS
+   ============================================================ */
+
+/* === Hidden-letter glow for secret message === */
+.hidden-letter {
+  font-weight: 700;
+}
+
+.hidden-letter--cyan {
+  color: #3ff4fb;
+  text-shadow: 0 0 7px rgba(63, 244, 251, 0.9);
+}
+
+.hidden-letter--yellow {
+  color: #f9f871;
+  text-shadow: 0 0 7px rgba(249, 248, 113, 0.85);
+}
+
+/* === Project MF Chedda highlight === */
+.project-mf {
+  font-weight: 700;
+  background: linear-gradient(90deg, #f9f871, #ff9cf7, #3ff4fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(255, 120, 255, 0.3);
+}
+
+/* === High Council panel / auth check extras === */
+.panel-high-council .panel-footnote {
+  font-size: 0.75rem;
+  color: rgba(186, 205, 255, 0.9);
+}
+
+.panel-auth-check {
+  position: relative;
+  border-radius: 24px;
+  border: 1px dashed rgba(247, 233, 124, 0.7);
+  background: radial-gradient(circle at top left, #231f38 0%, #05030b 65%);
+  padding: 1.2rem;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.05);
+}
+
+.auth-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  border: none;
+  background: transparent;
+  color: rgba(233, 239, 255, 0.8);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.teaser-panel {
+  margin-top: 1rem;
+  padding: 0.9rem 0.9rem 0.95rem;
+  border-radius: 14px;
+  background: radial-gradient(circle at top, rgba(111, 171, 255, 0.14), transparent);
+  border: 1px dashed rgba(126, 186, 255, 0.5);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: rgba(210, 225, 255, 0.8);
+}
+
+/* ============================================================
+   HOLO SUBJECT STAMPS FOR CHARACTER BIOS
+   ============================================================ */
+
+.subject-stamp {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.95;
+  margin-bottom: 0.55rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(20, 22, 32, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+/* holo glyph */
+.subject-stamp::before {
+  content: "◊";
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+/* color variants */
+.subject-stamp--cyan {
+  color: #3ff4fb;
+  text-shadow: 0 0 7px rgba(63, 244, 251, 0.95);
+  border-color: rgba(63, 244, 251, 0.45);
+}
+
+.subject-stamp--magenta {
+  color: #ff9cf7;
+  text-shadow: 0 0 8px rgba(255, 156, 247, 0.9);
+  border-color: rgba(255, 156, 247, 0.45);
+}
+
+.subject-stamp--yellow {
+  color: #f9f871;
+  text-shadow: 0 0 6px rgba(249, 248, 113, 0.9);
+  border-color: rgba(249, 248, 113, 0.45);
+}
+
+
+/* ============================================================
+   BIO TEXT TRIPPY “WAVY” MICRO EFFECTS
+   ============================================================ */
+
+.bio-entry {
+  position: relative;
+  padding-left: 0.6rem;
+}
+
+.bio-entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 3px;
+  height: 80%;
+  background: linear-gradient(
+    180deg,
+    rgba(63, 244, 251, 0.8),
+    rgba(255, 156, 247, 0.8)
+  );
+  border-radius: 3px;
+  filter: blur(1.2px);
+  opacity: 0.6;
+}
+
+/* micro shimmer on hover */
+.bio-entry:hover {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.18);
+  transition: text-shadow 0.2s ease;
+}
+
+/* ============================================================
+   “GLYPH NOISE” random artifacts (subtle stoner glitch flavor)
+   ============================================================ */
+
+.glyph-noise {
+  font-family: "SF Mono", monospace;
+  opacity: 0.22;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  user-select: none;
+  display: inline-block;
+  transform: translateY(1px);
+  margin-left: 0.2rem;
+}
+
+/* shimmer effect */
+@keyframes noisePulse {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.28; }
+  100% { opacity: 0.1; }
+}
+
+.glyph-noise {
+  animation: noisePulse 2.8s infinite;
+}
