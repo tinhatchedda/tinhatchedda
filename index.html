@@ -2,100 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tin Hat Chedda™ — Classified Access</title>
+  <title>Tin Hat Chedda — Entry Node</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="TIN HAT CHEDDA™ — Where conspiracy meets currency. Classified incident footage, interdimensional nachos, and web3 paranoia."
-  />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
 </head>
-<body class="landing-body">
-  <div class="grain-layer"></div>
+<body class="landing-page">
+  <div class="hero-video-wrap">
+    <video
+      id="heroTrailer"
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="assets/video/vol1-trailer.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
 
-  <header class="landing-header">
-    <div class="labelling">
-      <span class="label-chip label-red">TOP SECRET</span>
-      <span class="label-chip label-amber">CLASSIFIED FILE</span>
-      <span class="label-chip label-green">WEB3 SIGNAL ONLINE</span>
+  <header class="site-header hero-header">
+    <div class="logo-lockup">
+      <span class="site-title-gradient">TIN HAT CHEDDA™</span>
+      <span class="site-tagline">Where Conspiracy Meets Currency</span>
     </div>
-
-    <div class="logo-stack">
-      <h1 class="site-logo">
-        <span class="logo-fade">TIN HAT</span>
-        <span class="logo-glow">CHEDDA™</span>
-      </h1>
-      <p class="site-tagline">Where Conspiracy Meets Currency.</p>
-      <p class="site-subtag">
-        Unauthorized viewing may cause hunger, time dilation, and sudden interest in memecoins.
-      </p>
-    </div>
+    <nav class="hero-nav">
+      <a href="incident.html" class="nav-link">Enter the Files</a>
+    </nav>
   </header>
 
-  <main class="landing-main">
-    <section class="hero-shell">
-      <div class="hero-video-wrap">
-        <!-- HERO TRAILER ONLY -->
-        <video
-          id="heroVideo"
-          class="hero-video"
-          src="assets/video/vol1-trailer.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-        ></video>
+  <main class="hero-main">
+    <section class="hero-content">
+      <h1 class="hero-heading">The Chedda Files — Vol. 1</h1>
+      <p class="hero-subcopy">
+        Classified test footage recovered from a nacho-based anomaly.
+        Trailer loops below. If you’re seeing this, you’re already in
+        too deep.
+      </p>
 
-        <div class="hero-gradient-overlay"></div>
-
-        <div class="hero-content">
-          <p class="hero-kicker">FILE VOL. 1 — “THE CHEDDA INCIDENT”</p>
-          <h2 class="hero-title">Recovered Broadcast from the Nacho Continuum</h2>
-          <p class="hero-blurb">
-            First contact between Greg, Bigfoot, and weaponized government cheese.
-            This footage “doesn’t exist” and never happened.
-          </p>
-
-          <div class="hero-actions">
-            <!-- GO TO INCIDENT PAGE -->
-            <button class="btn btn-primary" data-enter-files>
-              ☢ Enter the Incident
-            </button>
-            <button class="btn btn-ghost" id="audioToggle">
-              🔇 Unmute Trailer
-            </button>
-          </div>
-
-          <p class="hero-meta">
-            STATUS: <span class="hero-meta-pill">LEAKED</span>
-            <span class="hero-meta-divider">•</span>
-            ORIGIN: UNKNOWN SERVER FARM
-          </p>
-        </div>
+      <div class="hero-actions">
+        <a href="incident.html" class="btn-primary">Enter the Files</a>
+        <button id="muteToggle" class="btn-ghost">Unmute Audio</button>
       </div>
-    </section>
 
-    <section class="scanline-strip">
-      <p class="scanline-text">
-        <span class="scanline-label">SYSTEM FEED:</span>
-        <span id="rotatingTagline" class="scanline-dynamic">
-          Powered by paranoia.
-        </span>
+      <p class="hero-footnote">
+        <span class="dot-glow"></span>
+        Best viewed slightly baked, volume up.
       </p>
     </section>
   </main>
-
-  <footer class="landing-footer">
-    <p class="footer-text-mono">
-      TIN HAT CHEDDA™ — Volume 1 Access Node · All transmissions logged on-chain (probably).
-    </p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
