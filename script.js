@@ -1,24 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Hero trailer mute / unmute on landing page
-  const trailer = document.getElementById("heroTrailer");
-  const muteToggle = document.getElementById("muteToggle");
+// script.js
 
-  if (trailer && muteToggle) {
-    // Make sure it starts muted for autoplay rules
-    trailer.muted = true;
+// HERO AUDIO TOGGLE (HOME PAGE)
+const heroVideo = document.querySelector(".hero-video");
+const heroToggleBtn = document.getElementById("hero-audio-toggle");
 
-    const updateLabel = () => {
-      muteToggle.textContent = trailer.muted
-        ? "Unmute Audio"
-        : "Mute Audio";
-    };
+if (heroVideo && heroToggleBtn) {
+  heroToggleBtn.addEventListener("click", () => {
+    const isMuted = heroVideo.muted;
+    heroVideo.muted = !isMuted;
+    heroToggleBtn.textContent = isMuted ? "Mute Audio" : "Unmute Audio";
 
-    muteToggle.addEventListener("click", () => {
-      trailer.muted = !trailer.muted;
-      trailer.play().catch(() => {});
-      updateLabel();
-    });
+    // try to play in case browser blocked autoplay with sound
+    if (!heroVideo.paused) return;
+    heroVideo
+      .play()
+      .catch(() => {
+        // ignore autoplay errors silently
+      });
+  });
+}
 
-    updateLabel();
+// SMALL NICE-TO-HAVE: mark active nav link by pathname
+const navLinks = document.querySelectorAll(".main-nav .nav-link");
+navLinks.forEach((link) => {
+  if (link.href === window.location.href) {
+    link.classList.add("active");
   }
 });
