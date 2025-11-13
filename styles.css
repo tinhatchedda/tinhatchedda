@@ -571,20 +571,6 @@ body {
    SECRET CODE BLOCK
    ============== */
 
-/* Individual code letters */
-.chedda-code-letter {
-  color: var(--accent-cyan);
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 700;
-  text-shadow: 0 0 8px rgba(63, 244, 251, 0.9);
-}
-
-.chedda-code-letter.alt {
-  color: var(--accent-magenta);
-  text-shadow: 0 0 8px rgba(255, 58, 207, 0.9);
-}
-
-/* Secret card wrapper (optional extra styling) */
 .card-secret {
   text-align: center;
 }
@@ -593,6 +579,23 @@ body {
   max-width: 720px;
   margin: 0 auto;
   font-size: 0.9rem;
+}
+
+/* individual letters that spell the hidden phrase */
+.chedda-code-letter {
+  color: var(--accent-cyan);
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-size: 1.1em;
+  padding: 0 1px;
+  border-bottom: 1px solid rgba(63, 244, 251, 0.7);
+  text-shadow: 0 0 8px rgba(63, 244, 251, 0.9);
+}
+
+.chedda-code-letter.alt {
+  color: var(--accent-magenta);
+  border-bottom-color: rgba(255, 58, 207, 0.8);
+  text-shadow: 0 0 8px rgba(255, 58, 207, 0.9);
 }
 
 /* ==============
